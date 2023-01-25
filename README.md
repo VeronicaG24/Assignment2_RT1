@@ -20,7 +20,7 @@ How to run
 To launch the assignment is necessary to clone the GitHub repository using:
 
 ```bash
-git clone command https://github.com/VeronicaG24/follow_goal.git
+git clone https://github.com/VeronicaG24/assignment2_RT1.git
 ```
 
 and move all the content into the folder `/my_ros/src`.

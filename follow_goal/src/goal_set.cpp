@@ -44,13 +44,14 @@ void get_number_goals() {
 # Get the answer and return it
 # 
 ################################################*/
-int input_menu(char answer) {
+int input_menu() {
+	char answ;
 
 	cout<<"\n\n--------------------------------------------------------\nSelect an option:\n  1) Set goal coordinates\n  2) Delete current goal\n  3) Number of deleted and reached goal\n  4) Exit\nPress the number corresponding to the choosen option\n--------------------------------------------------------\n\n";
 	
-  	cin>>answer;
+  	cin>>answ;
   	
-  	return answer;
+  	return answ;
 }
 
 
@@ -101,7 +102,7 @@ int main(int argc, char **argv) {
   	ac.waitForServer();
 	
 	while (ros::ok()) {
-  		answer = input_menu(answer);
+  		answer = input_menu();
   		state = ac.getState();
   		succeed = state.toString().compare("SUCCEEDED");
   		

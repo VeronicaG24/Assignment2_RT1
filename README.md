@@ -104,12 +104,12 @@ get state from action client;
 call waitForService method;
 
 while ROS is working: {
-    call input_menu function
-    get the state of the action client
-    set state for setting goal as the comparison between "SUCCEEDED" and  the state of the action client
+    call input_menu function;
+    get the state of the action client:
+    set state for setting goal as the comparison between "SUCCEEDED" and  the state of the action client;
 
     if the state of the action client is not 0 and the comparison returns 0:
-        decrease variable to state if the goal is set
+        decrease variable to state if the goal is set;
 
     switch in base of values of varible for choosed option: {
         case when = 1:
@@ -117,7 +117,7 @@ while ROS is working: {
             compare "SUCCEEDED" and object state; 
 
             if the comparison return 1 and a goal is set:
-                ask to delate the goal before setting a new one
+                ask to delate the goal before setting a new one;
             
             if the comparison return 0 and a goal is set
                 decrease variable to state if the goal is set;

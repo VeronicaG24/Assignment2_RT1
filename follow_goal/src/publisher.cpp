@@ -5,10 +5,21 @@
 #include "nav_msgs/Odometry.h"
 #include "follow_goal/pos_vel.h"
 
+
+// global variables for position and velocity of the robot
 float x_pos, y_pos, x_vel, y_vel;
 
+// publisher 
 ros::Publisher pub;
 
+
+/*###############################################
+# 
+# Get position and velocity of the robot
+# from topic odom
+# Public them to custom topic pos_vel
+# 
+################################################*/
 void pos_vel_callback(const nav_msgs::Odometry::ConstPtr& msg) {
 	ROS_INFO("\nRobot subscriber@[%f, %f, %f, %f]\n", msg->pose.pose.position.x, msg->pose.pose.position.y, msg->twist.twist.linear.x, msg->twist.twist.linear.y);	
 	
@@ -29,17 +40,24 @@ void pos_vel_callback(const nav_msgs::Odometry::ConstPtr& msg) {
 }
 
 
+/*###############################################
+# 
+# Manage ROS init, NodeHandle, subscriber,
+# and publisher
+# 
+################################################*/
 int main(int argc, char **argv) {
-	//Init for ROS
+	
+	//init
 	ros::init(argc, argv, "publisher_robot");
 	
 	//NodeHandle for main access point to communications with ROS system
 	ros::NodeHandle n;
 	
-	// Call the subscriber
+	// Subscriber
 	ros::Subscriber sub = n.subscribe("/odom", 1, pos_vel_callback);
 	
-	//call the publisher
+	// Publisher
 	pub = n.advertise<follow_goal::pos_vel>("/robot_info", 10);
 	
 	sleep(1);

@@ -363,8 +363,6 @@ Launch file
 ----------------------
 
 ```python
-to start the whole program, and pass the rate parameter for printing the information of the subscriber node
-
 set the rate frequency value;
 
 spawn goal_set node;

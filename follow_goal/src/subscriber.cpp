@@ -14,6 +14,9 @@ float x_pos, y_pos, x_vel, y_vel, x_goal, y_goal;
 float dist_goal, average_vel;
 // global variable for frequency rate
 double frequency;
+// Subscribers
+ros::Subscriber sub1;
+ros::Subscriber sub2;
 
 
 /*#############################################
@@ -85,10 +88,10 @@ int main(int argc, char **argv) {
 	
 	while(ros::ok()) {
 		// Subscriber for position and velocity
-		ros::Subscriber sub1 = n.subscribe("/robot_info", 1, pos_vel_callback);
+		sub1 = n.subscribe("/robot_info", 1, pos_vel_callback);
 		
 		// Subscriber for goal coordinates
-		ros::Subscriber sub2 = n.subscribe("/reaching_goal/goal", 1, goal_callback);
+		sub2 = n.subscribe("/reaching_goal/goal", 1, goal_callback);
 		
 		// calculation of distance from the goal and average speed
 		get_dist_vel_from_goal();

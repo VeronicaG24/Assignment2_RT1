@@ -301,6 +301,8 @@ Global variables are defined at the start of the code:
 * `dist_goal`: float for distance from the goal
 * `average_vel`: float for average velocity of the robot
 * `frequency`: double for frequency rate
+* `pub1`: instance for publisher for `/robot_info`
+* `pub2`: instance for publisher for `/reaching_goal/goal`
 
 The code is divided into separate functions:
 
@@ -315,9 +317,9 @@ get frequency parameters;
 set rate frequency;
 
 while ROS is working: {
-    call subscriber method with arguments "/robot_info", 1, and pos_vel_callback, assign the retun velue to `sub1` object;
+    call subscriber method with arguments "/robot_info", 1, and pos_vel_callback, assign the retun velue to `sub1`;
 
-    call advertiseService with arguments "/reaching_goal/goal", and goal_callback, assign the retun velue to `sub2`;
+    call subscriber method with arguments "/reaching_goal/goal", and goal_callback, assign the retun velue to `sub2`;
 
     call get_dist_vel_from_goal() function;
 

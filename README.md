@@ -156,7 +156,7 @@ while ROS is working: {
 return 0;
 ```
 
-* `get_bumber_goals()`: calls the custom service and print the number of reached and deleted goal.
+* `get_number_goals()`: calls the custom service and print the number of reached and deleted goal.
 
 ```python
 call waitForExistence method;

@@ -1,3 +1,11 @@
+/**
+*\file goal_count.cpp
+*\brief ROS node for counting goals reached and deleted
+*\author Veronica Gavagna
+*\version 0.1
+*\date 26/01/2023
+**/
+
 #include <ros/ros.h>
 #include <follow_goal/GoalNumber.h>
 #include "assignment_2_2022/PlanningActionResult.h"
@@ -5,8 +13,9 @@
 using namespace std;
 
 //global variables for status and number of goals reached and deleted
-int status;
-int reached_goal=0, deleted_goal=0;
+int status; ///< global varibles for status
+int reached_goal=0; ///< global counter for reached goals
+int deleted_goal=0; ///< global counter for deleted goals
 
 
 /*#############################################

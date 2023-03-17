@@ -1,0 +1,56 @@
+\hypertarget{goal__count_8cpp}{}\doxysection{src/goal\+\_\+count.cpp File Reference}
+\label{goal__count_8cpp}\index{src/goal\_count.cpp@{src/goal\_count.cpp}}
+
+
+R\+OS node for counting goals reached and deleted.  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$follow\+\_\+goal/\+Goal\+Number.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2\+\_\+2022/\+Planning\+Action\+Result.\+h\char`\"{}}\newline
+Include dependency graph for goal\+\_\+count.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{goal__count_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{goal__count_8cpp_ae7655efe90e439ceb94aec4d274eae88}\label{goal__count_8cpp_ae7655efe90e439ceb94aec4d274eae88}} 
+bool {\bfseries goal\+\_\+service\+\_\+callback} (follow\+\_\+goal\+::\+Goal\+Number\+::\+Request \&req, follow\+\_\+goal\+::\+Goal\+Number\+::\+Response \&res)
+\item 
+\mbox{\Hypertarget{goal__count_8cpp_a25710274a8f1eace1b9a3d28ff0a8562}\label{goal__count_8cpp_a25710274a8f1eace1b9a3d28ff0a8562}} 
+void {\bfseries count\+\_\+reach\+\_\+delete\+\_\+callback} (const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&msg)
+\item 
+\mbox{\Hypertarget{goal__count_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{goal__count_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{goal__count_8cpp_a6e27f49150e9a14580fb313cc2777e00}\label{goal__count_8cpp_a6e27f49150e9a14580fb313cc2777e00}} 
+int \mbox{\hyperlink{goal__count_8cpp_a6e27f49150e9a14580fb313cc2777e00}{status}}
+\begin{DoxyCompactList}\small\item\em global varibles for status \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goal__count_8cpp_a0f62d47c1df4bd3307728ad59a2b3aa0}\label{goal__count_8cpp_a0f62d47c1df4bd3307728ad59a2b3aa0}} 
+int \mbox{\hyperlink{goal__count_8cpp_a0f62d47c1df4bd3307728ad59a2b3aa0}{reached\+\_\+goal}} =0
+\begin{DoxyCompactList}\small\item\em global counter for reached goals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{goal__count_8cpp_aeaa0e44cd1e8f730db91f86dfd04c0ed}\label{goal__count_8cpp_aeaa0e44cd1e8f730db91f86dfd04c0ed}} 
+int \mbox{\hyperlink{goal__count_8cpp_aeaa0e44cd1e8f730db91f86dfd04c0ed}{deleted\+\_\+goal}} =0
+\begin{DoxyCompactList}\small\item\em global counter for deleted goals \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+R\+OS node for counting goals reached and deleted. 
+
+\begin{DoxyAuthor}{Author}
+Veronica Gavagna 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26/01/2023 
+\end{DoxyDate}

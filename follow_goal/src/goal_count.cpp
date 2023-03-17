@@ -18,12 +18,14 @@ int reached_goal=0; ///< global counter for reached goals
 int deleted_goal=0; ///< global counter for deleted goals
 
 
-/*#############################################
-# 
-# Get number of reached and deleted goals
-# Send information on custom service result
-# 
-##############################################*/
+/**
+*\brief goal service callback
+*\param request, response
+*\return true
+
+* This function get the number of reached and deleted goals
+* and send information on custom service result
+**/
 bool goal_service_callback(follow_goal::GoalNumber::Request &req, follow_goal::GoalNumber::Response &res) {
 	res.reached = reached_goal;
 	res.deleted = deleted_goal;

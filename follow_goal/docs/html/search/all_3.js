@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['status_3',['status',['../goal__count_8cpp.html#a6e27f49150e9a14580fb313cc2777e00',1,'goal_count.cpp']]]
+  ['frequency_7',['frequency',['../subscriber_8cpp.html#a4c45cdff103e6644a620ba5061509f22',1,'subscriber.cpp']]]
 ];

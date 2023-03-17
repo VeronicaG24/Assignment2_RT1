@@ -1,3 +1,11 @@
+/**
+*\file publisher.cpp
+*\brief ROS node for counting goals reached and deleted
+*\author Veronica Gavagna
+*\version 0.1
+*\date 26/01/2023
+**/
+
 #include <ros/ros.h>
 #include <unistd.h>
 #include <sstream>

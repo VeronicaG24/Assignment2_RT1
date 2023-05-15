@@ -2,7 +2,7 @@
 \label{publisher_8cpp}\index{follow\_goal/src/publisher.cpp@{follow\_goal/src/publisher.cpp}}
 
 
-R\+OS node for counting goals reached and deleted.  
+R\+OS node for publish on the custom topic pos\+\_\+vel.  
 
 
 {\ttfamily \#include $<$ros/ros.\+h$>$}\newline
@@ -22,26 +22,31 @@ Include dependency graph for publisher.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{publisher_8cpp_a4d5ad58a51d16fae2db4139bd59c621f}{pos\+\_\+vel\+\_\+callback}} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
-\item 
+\begin{DoxyCompactList}\small\item\em pos\+\_\+vel\+\_\+callback function \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{publisher_8cpp_a103d17f7ae810b61a0196086a9642477}{x\+\_\+pos}}
+\mbox{\Hypertarget{publisher_8cpp_a103d17f7ae810b61a0196086a9642477}\label{publisher_8cpp_a103d17f7ae810b61a0196086a9642477}} 
+float {\bfseries x\+\_\+pos}
 \item 
+\mbox{\Hypertarget{publisher_8cpp_a17c98f6e8cadb148806771b487612871}\label{publisher_8cpp_a17c98f6e8cadb148806771b487612871}} 
 float \mbox{\hyperlink{publisher_8cpp_a17c98f6e8cadb148806771b487612871}{y\+\_\+pos}}
+\begin{DoxyCompactList}\small\item\em global varibles for (x,y) positions of the robot \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a3de37f75c60c34f649fd275f98dccd08}\label{publisher_8cpp_a3de37f75c60c34f649fd275f98dccd08}} 
+float {\bfseries x\+\_\+vel}
 \item 
-float \mbox{\hyperlink{publisher_8cpp_a3de37f75c60c34f649fd275f98dccd08}{x\+\_\+vel}}
-\item 
+\mbox{\Hypertarget{publisher_8cpp_abad2a40e891314347d092d5a8f4ebb84}\label{publisher_8cpp_abad2a40e891314347d092d5a8f4ebb84}} 
 float \mbox{\hyperlink{publisher_8cpp_abad2a40e891314347d092d5a8f4ebb84}{y\+\_\+vel}}
-\item 
+\begin{DoxyCompactList}\small\item\em global varibles for (x,y) velocities of the robot \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}\label{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}} 
 ros\+::\+Publisher \mbox{\hyperlink{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em instance for the publisher \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-R\+OS node for counting goals reached and deleted. 
+R\+OS node for publish on the custom topic pos\+\_\+vel. 
 
 \begin{DoxyAuthor}{Author}
 Veronica Gavagna 
@@ -61,7 +66,20 @@ Veronica Gavagna
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{publisher_8cpp_a4d5ad58a51d16fae2db4139bd59c621f}\label{publisher_8cpp_a4d5ad58a51d16fae2db4139bd59c621f}} 
+
+
+Main function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc,argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0
+\end{DoxyReturn}
+This function manages the publisher node. ~\newline
+ It does the R\+OS init, set the Node\+Handle to access the comunication with the R\+OS system, creates a subscriber to \char`\"{}/odom\char`\"{} and set the publisher to \char`\"{}/robot\+\_\+info\char`\"{}. \mbox{\Hypertarget{publisher_8cpp_a4d5ad58a51d16fae2db4139bd59c621f}\label{publisher_8cpp_a4d5ad58a51d16fae2db4139bd59c621f}} 
 \index{publisher.cpp@{publisher.cpp}!pos\_vel\_callback@{pos\_vel\_callback}}
 \index{pos\_vel\_callback@{pos\_vel\_callback}!publisher.cpp@{publisher.cpp}}
 \doxysubsubsection{\texorpdfstring{pos\_vel\_callback()}{pos\_vel\_callback()}}
@@ -69,34 +87,14 @@ Veronica Gavagna
 
 
 
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}\label{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}} 
-\index{publisher.cpp@{publisher.cpp}!pub@{pub}}
-\index{pub@{pub}!publisher.cpp@{publisher.cpp}}
-\doxysubsubsection{\texorpdfstring{pub}{pub}}
-{\footnotesize\ttfamily ros\+::\+Publisher pub}
+pos\+\_\+vel\+\_\+callback function 
 
-\mbox{\Hypertarget{publisher_8cpp_a103d17f7ae810b61a0196086a9642477}\label{publisher_8cpp_a103d17f7ae810b61a0196086a9642477}} 
-\index{publisher.cpp@{publisher.cpp}!x\_pos@{x\_pos}}
-\index{x\_pos@{x\_pos}!publisher.cpp@{publisher.cpp}}
-\doxysubsubsection{\texorpdfstring{x\_pos}{x\_pos}}
-{\footnotesize\ttfamily float x\+\_\+pos}
 
-\mbox{\Hypertarget{publisher_8cpp_a3de37f75c60c34f649fd275f98dccd08}\label{publisher_8cpp_a3de37f75c60c34f649fd275f98dccd08}} 
-\index{publisher.cpp@{publisher.cpp}!x\_vel@{x\_vel}}
-\index{x\_vel@{x\_vel}!publisher.cpp@{publisher.cpp}}
-\doxysubsubsection{\texorpdfstring{x\_vel}{x\_vel}}
-{\footnotesize\ttfamily float x\+\_\+vel}
-
-\mbox{\Hypertarget{publisher_8cpp_a17c98f6e8cadb148806771b487612871}\label{publisher_8cpp_a17c98f6e8cadb148806771b487612871}} 
-\index{publisher.cpp@{publisher.cpp}!y\_pos@{y\_pos}}
-\index{y\_pos@{y\_pos}!publisher.cpp@{publisher.cpp}}
-\doxysubsubsection{\texorpdfstring{y\_pos}{y\_pos}}
-{\footnotesize\ttfamily float y\+\_\+pos}
-
-\mbox{\Hypertarget{publisher_8cpp_abad2a40e891314347d092d5a8f4ebb84}\label{publisher_8cpp_abad2a40e891314347d092d5a8f4ebb84}} 
-\index{publisher.cpp@{publisher.cpp}!y\_vel@{y\_vel}}
-\index{y\_vel@{y\_vel}!publisher.cpp@{publisher.cpp}}
-\doxysubsubsection{\texorpdfstring{y\_vel}{y\_vel}}
-{\footnotesize\ttfamily float y\+\_\+vel}
-
+\begin{DoxyParams}{Parameters}
+{\em msg} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+This function get position and velocity of the robot from topic \char`\"{}/odom\char`\"{} and pusblishes them on custom topic \char`\"{}/pos\+\_\+vel\char`\"{}. 

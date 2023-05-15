@@ -1,6 +1,6 @@
 /**
 *\file publisher.cpp
-*\brief ROS node for counting goals reached and deleted
+*\brief ROS node for publish on the custom topic pos_vel
 *\author Veronica Gavagna
 *\version 0.1
 *\date 26/01/2023
@@ -14,20 +14,19 @@
 #include "follow_goal/pos_vel.h"
 
 
-// global variables for position and velocity of the robot
-float x_pos, y_pos, x_vel, y_vel;
+float x_pos, y_pos; ///< global varibles for (x,y) positions of the robot
+float x_vel, y_vel; ///< global varibles for (x,y) velocities of the robot
 
-// publisher 
-ros::Publisher pub;
+ros::Publisher pub; ///< instance for the publisher
 
 
-/*###############################################
-# 
-# Get position and velocity of the robot
-# from topic odom
-# Public them to custom topic pos_vel
-# 
-################################################*/
+/**
+*\brief pos_vel_callback function
+*\param msg
+*\return void
+
+* This function get position and velocity of the robot from topic "/odom" and pusblishes them on custom topic "/pos_vel".
+**/
 void pos_vel_callback(const nav_msgs::Odometry::ConstPtr& msg) {
 	ROS_INFO("\nRobot subscriber@[%f, %f, %f, %f]\n", msg->pose.pose.position.x, msg->pose.pose.position.y, msg->twist.twist.linear.x, msg->twist.twist.linear.y);	
 	
@@ -48,12 +47,15 @@ void pos_vel_callback(const nav_msgs::Odometry::ConstPtr& msg) {
 }
 
 
-/*###############################################
-# 
-# Manage ROS init, NodeHandle, subscriber,
-# and publisher
-# 
-################################################*/
+/**
+*\brief Main function
+*\param argc, argv
+*\return 0
+
+* This function manages the publisher node. <BR>
+* It does the ROS init, set the NodeHandle to access the comunication with the ROS system, 
+* creates a subscriber to "/odom" and set the publisher to "/robot_info".
+**/
 int main(int argc, char **argv) {
 	
 	//init

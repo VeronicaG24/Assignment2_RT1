@@ -1,6 +1,6 @@
 /**
 *\file subscriber.cpp
-*\brief ROS node for counting goals reached and deleted
+*\brief ROS node for computing the distance from the goal and average velocity
 *\author Veronica Gavagna
 *\version 0.1
 *\date 26/01/2023
@@ -16,23 +16,26 @@
 
 using namespace std;
 
-// global variables for position and velocity of the robot, coordinates of the goal
-float x_pos, y_pos, x_vel, y_vel, x_goal, y_goal;
-// global variables for distance from the goal and average speed
-float dist_goal, average_vel;
-// global variable for frequency rate
-double frequency;
-// Subscribers
-ros::Subscriber sub1;
-ros::Subscriber sub2;
+float x_pos, y_pos; ///< global varibles for (x,y) positions of the robot
+float x_vel, y_vel; ///< global varibles for (x,y) velocities of the robot
+float x_goal, y_goal; ///< global varibles for (x,y) positions of the goal
+
+float dist_goal; ///< global varible for the distance from the goal
+float average_vel; ///< global varible for the average speed of the robot
+
+double frequency; ///< global varibles for the frequency rate
+
+ros::Subscriber sub1; ///< instance for the first subscriber
+ros::Subscriber sub2; ///< instance for the second subscriber
 
 
-/*#############################################
-# 
-# Get position and velocity of the robot
-# from custom topic pos_vel
-# 
-##############################################*/
+/**
+*\brief pos_vel_callback function
+*\param msg
+*\return void
+
+* This function get position and velocity of the robot from custom topic pos_vel.
+**/
 void pos_vel_callback(const follow_goal::pos_vel::ConstPtr& msg) {
 
 	x_pos = msg->x_pos;
@@ -43,11 +46,13 @@ void pos_vel_callback(const follow_goal::pos_vel::ConstPtr& msg) {
 }
 
 
-/*#############################################
-# 
-# Get coordinates of the goal 
-# 
-##############################################*/
+/**
+*\brief goal_callback function
+*\param msg
+*\return void
+
+* This function gets coordinates of the goal.
+**/
 void goal_callback(const follow_goal::PlanningActionGoal::ConstPtr& msg) {	
 	
 	x_goal = msg->goal.target_pose.pose.position.x;
@@ -56,13 +61,13 @@ void goal_callback(const follow_goal::PlanningActionGoal::ConstPtr& msg) {
 }
 
 
-/*#############################################
-# 
-# Compute distance from the goal and average
-# speed of the robot
-# Print the results 
-# 
-##############################################*/
+/**
+*\brief get_dist_vel_from_goal function
+*\param 
+*\return void
+
+* This function computes distance from the goal and average speed of the robot, and prints the results.
+**/
 void get_dist_vel_from_goal() {
 
 	dist_goal = sqrt(((x_goal - x_pos)*(x_goal - x_pos)) + ((y_goal - y_pos)*(y_goal - y_pos)));
@@ -74,14 +79,16 @@ void get_dist_vel_from_goal() {
 }
 
 
-/*###############################################
-# 
-# Manage ROS init, NodeHandle, rate frequency,
-# subscriber for position and velocity,
-# subscriber for goal coordinates, and calculation
-# of distance from the goal and average speed
-# 
-################################################*/
+/**
+*\brief Main function
+*\param argc, argv
+*\return 0
+
+* This function manages the subscriber node. <BR>
+* It does the ROS init, set the NodeHandle to access the comunication with the ROS system, 
+* set the rate frequency, creates a subscriber to "/robot_info" and another one to "/reaching_goal/goal". <BR>
+* It also calls the function to compute the distance from the goal and the average speed.
+**/
 int main(int argc, char **argv) {
 	
 	//init

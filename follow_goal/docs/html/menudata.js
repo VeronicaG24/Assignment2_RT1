@@ -36,7 +36,6 @@ var menudata={children:[
 {text:"p",url:"globals.html#index_p"},
 {text:"r",url:"globals.html#index_r"},
 {text:"s",url:"globals.html#index_s"},
-{text:"x",url:"globals.html#index_x"},
 {text:"y",url:"globals.html#index_y"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html"}]}]}]}

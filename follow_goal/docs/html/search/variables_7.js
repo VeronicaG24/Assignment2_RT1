@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x_5fgoal_58',['x_goal',['../subscriber_8cpp.html#a829831b69f522e8f5ae5dcdc28158d3e',1,'subscriber.cpp']]],
-  ['x_5fpos_59',['x_pos',['../goal__set_8cpp.html#a103d17f7ae810b61a0196086a9642477',1,'x_pos():&#160;goal_set.cpp'],['../publisher_8cpp.html#a103d17f7ae810b61a0196086a9642477',1,'x_pos():&#160;publisher.cpp'],['../subscriber_8cpp.html#a103d17f7ae810b61a0196086a9642477',1,'x_pos():&#160;subscriber.cpp']]],
-  ['x_5fvel_60',['x_vel',['../publisher_8cpp.html#a3de37f75c60c34f649fd275f98dccd08',1,'x_vel():&#160;publisher.cpp'],['../subscriber_8cpp.html#a3de37f75c60c34f649fd275f98dccd08',1,'x_vel():&#160;subscriber.cpp']]]
+  ['y_5fgoal_53',['y_goal',['../subscriber_8cpp.html#a20e8d23393e688fc52779c872bdc1e45',1,'subscriber.cpp']]],
+  ['y_5fpos_54',['y_pos',['../goal__set_8cpp.html#a17c98f6e8cadb148806771b487612871',1,'y_pos():&#160;goal_set.cpp'],['../publisher_8cpp.html#a17c98f6e8cadb148806771b487612871',1,'y_pos():&#160;publisher.cpp'],['../subscriber_8cpp.html#a17c98f6e8cadb148806771b487612871',1,'y_pos():&#160;subscriber.cpp']]],
+  ['y_5fvel_55',['y_vel',['../publisher_8cpp.html#abad2a40e891314347d092d5a8f4ebb84',1,'y_vel():&#160;publisher.cpp'],['../subscriber_8cpp.html#abad2a40e891314347d092d5a8f4ebb84',1,'y_vel():&#160;subscriber.cpp']]]
 ];

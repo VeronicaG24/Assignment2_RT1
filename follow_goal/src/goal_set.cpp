@@ -1,6 +1,6 @@
 /**
 *\file goal_set.cpp
-*\brief ROS node for counting goals reached and deleted
+*\brief ROS node for managing the menu
 *\author Veronica Gavagna
 *\version 0.1
 *\date 26/01/2023
@@ -18,21 +18,21 @@
 
 using namespace std;
 
-// global variables for number of goals reached and deleted, and position of the robot
-int reached, deleted;
-float x_pos, y_pos;
+int reached, deleted; ///< global varibles for reached and deleted goals
+float x_pos, y_pos; ///< global varibles for (x,y) coordinates position of the robot
 
-// istance client and custome service
-ros::ServiceClient client;
-follow_goal::GoalNumber srv;
+ros::ServiceClient client; ///< instance client
+follow_goal::GoalNumber srv; ///< instance custome service
 
 
-/*###############################################
-# 
-# Calls the custom service
-# Print the number of goals reached and deleted
-# 
-################################################*/
+/**
+*\brief get_number_goals function
+*\param 
+*\return void
+
+* This function calls the custom service, get the number of goals reached 
+* and deleted and shows the results on the terminal.
+**/
 void get_number_goals() {
 
 	client.waitForExistence();
@@ -46,12 +46,13 @@ void get_number_goals() {
 }
 
 
-/*###############################################
-# 
-# Ask the user to choose an option from the menu
-# Get the answer and return it
-# 
-################################################*/
+/**
+*\brief input_menu function
+*\param 
+*\return answ
+
+* This function shows the menu and get thge answer from the user to the number corresponding to the action wanted. <BR>
+**/
 int input_menu() {
 	char answ;
 
@@ -63,12 +64,13 @@ int input_menu() {
 }
 
 
-/*###############################################
-# 
-# Ask the user to insert the coordinates of the
-# new goal
-# 
-################################################*/
+/**
+*\brief ask_goal function
+*\param 
+*\return void
+
+* This function ask the user to set the (x,y) corrdinates for setting of the new goal.
+**/
 void ask_goal() {
 	cout<<"Set the x of the goal:\n";
 	cin>>x_pos;
@@ -78,19 +80,24 @@ void ask_goal() {
 }
 
 
-/*###############################################
-# 
-# Manage ROS init, NodeHandle, action client,
-# the menu and the option choosed
-# 
-################################################*/
+/**
+*\brief Main function
+*\param argc, argv
+*\return 0
+
+* This function manages the goal_set node. <BR>
+* It does the ROS init, set the NodeHandle to access the comunication with the ROS system, 
+* and creates an action client to "/reaching_goal". <BR>
+* It manages the option menu where the user can set the goal coordinates, delate the current goal set,
+* get the number of reached and deleted goals, and exit the menu.
+**/
 int main(int argc, char **argv) {
-	// variable for answer choosed by the user
-  	char answer;
-  	// varible to state if the goal is reached
-  	int succeed;
-  	// variable to state if a goal is set
-  	int set_goal = 0;
+
+  	char answer; // local variable for answer choosed by the user
+
+  	int succeed; // local variable to state if the goal is reached
+
+  	int set_goal = 0; // local variable to state if the goal is set
   	
   	//init
 	ros::init(argc, argv, "goal_set");

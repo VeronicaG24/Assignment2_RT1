@@ -12,7 +12,6 @@
 
 using namespace std;
 
-//global variables for status and number of goals reached and deleted
 int status; ///< global varibles for status
 int reached_goal=0; ///< global counter for reached goals
 int deleted_goal=0; ///< global counter for deleted goals
@@ -20,7 +19,7 @@ int deleted_goal=0; ///< global counter for deleted goals
 
 /**
 *\brief goal service callback
-*\param request, response
+*\param req, res
 *\return true
 
 * This function get the number of reached and deleted goals
@@ -33,11 +32,16 @@ bool goal_service_callback(follow_goal::GoalNumber::Request &req, follow_goal::G
 }
 
 
-/*#############################################
-# 
-# Counts goals reached and deleted
-# 
-##############################################*/
+/**
+*\brief Counts goals reached and deleted
+*\param msg
+*\return void
+
+* This function count the number of reached and deleted goals
+* based on the status of the current goal. <BR>
+* If the statuse is succeeded, then the number of reached goal is incremented,
+* otherwise, if the status is preemptive, the number of deleted goal is incremented.
+**/
 void count_reach_delete_callback(const assignment_2_2022::PlanningActionResult::ConstPtr& msg) {
 	
 	status=msg->status.status;
@@ -53,12 +57,15 @@ void count_reach_delete_callback(const assignment_2_2022::PlanningActionResult::
 }
 
 
-/*#############################################
-# 
-# Manage ROS init, NodeHandle, subscriber 
-# and service
-# 
-##############################################*/
+/**
+*\brief Main function
+*\param argc, argv
+*\return 0
+
+* This function manages the goal_count node. <BR>
+* It does the ROS init, set the NodeHandle to access the comunication with the ROS system, 
+* creates a subscriber to "/reaching_goal/result" and a service server to "/result". <BR>
+**/
 int main (int argc, char** argv) {
 	
 	//init

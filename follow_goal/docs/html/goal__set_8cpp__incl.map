@@ -1,5 +1,5 @@
 <map id="follow_goal/src/goal_set.cpp" name="follow_goal/src/goal_set.cpp">
-<area shape="rect" id="node1" title="ROS node for counting goals reached and deleted." alt="" coords="687,5,839,47"/>
+<area shape="rect" id="node1" title="ROS node for managing the menu." alt="" coords="687,5,839,47"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,102,84,129"/>
 <area shape="rect" id="node3" title=" " alt="" coords="108,102,283,129"/>
 <area shape="rect" id="node4" title=" " alt="" coords="307,102,483,129"/>

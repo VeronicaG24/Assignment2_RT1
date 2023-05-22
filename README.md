@@ -5,6 +5,8 @@ This is a possible implementation of the second assignment of Reaserch Track 1 c
 
 The goal of this assignment is to familiarize with **ROS** by developing 3 (splitted into 4) nodes for specific 3D **Gazebo** and **Rviz** simulations.
 
+The documentation made with Doxygen can be found at link: https://veronicag24.github.io/assignment2_RT1/ 
+
 Installing
 ----------------------
 
